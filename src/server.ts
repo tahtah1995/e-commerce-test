@@ -13,7 +13,7 @@ import payload from 'payload'
 import { seed } from './payload/seed'
 
 const app = express()
-const PORT = process.env.PORT || 3000
+
 
 const start = async (): Promise<void> => {
   await payload.init({
@@ -51,7 +51,7 @@ const start = async (): Promise<void> => {
   nextApp.prepare().then(() => {
     payload.logger.info('Starting Next.js...')
 
-    app.listen(PORT, async () => {
+    app.listen(3000, async () => {
       payload.logger.info(`Next.js App URL: ${process.env.PAYLOAD_PUBLIC_SERVER_URL}`)
     })
   })
